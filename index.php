@@ -1,10 +1,8 @@
-<? function checkSex($name) {
-    //sprawdzamy czy na pewno litery 
+<? function checkSex($name) { 
     if(preg_match('#^[a-ząćęłńóśźżĄĆĘŁŃÓŚŹŻ ]*$#is', $name)==true) {
-        //zamieniamy litery na małe - potrzebne do wyjątków
         $name = strtolower($name);
-        //wyjątki
-        if($name == "kuba") $sex = "Imię męskie";
+
+        if(($name == "kuba") || ($name == "bonawentura") || ($name == "kosma") || ($name == "jarema") || ($name == "barnaba") || ($name == "zawisza")) $sex = "Imię męskie";
         
         else if(substr($name, -1)=="a") $sex = "Imię żeńskie";
                             
